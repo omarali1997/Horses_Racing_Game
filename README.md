@@ -45,4 +45,4 @@
 - pytest tests/test_game.py 
 
 #### Pull Requests
-- [PULL REQUEST LINK](https://github.com/amani51/Horses-Racing-Game/pull/2)
+- [PULL REQUEST LINK](https://github.com/omarali1997/Horses_Racing_Game/pull/3)
