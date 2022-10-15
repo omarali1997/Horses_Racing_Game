@@ -6,7 +6,7 @@ from classes import HorsesRacing
 def random_contender():
 
     '''
-    Function choose contender randomly depand on dictionary
+    A Function that will choose your contender randomly depends on contender dictionary. 
     '''
 
     contender={
@@ -16,15 +16,36 @@ def random_contender():
     }
     return [random.choice(contender['name']),random.choice(contender['Breed']),random.choice(contender['Point'])]
 
+                        # #################### Create Load Bar #################### #
+
+def Loadbar(iteration, total,prefix='', suffix='', decimals=1, length=100, fill='>'   ):
+                            percent = ('{0:.'+ str(decimals) + 'f}').format(100 * (iteration/float(total)))
+                            filledLenength = int(length * iteration // total)
+                            bar = fill * filledLenength + '_' * (length - filledLenength)
+                            print(f'\r{prefix} | {bar} | {percent}% {suffix}', end='\r')
+                            if iteration == total:
+                                    print()
+
+
 def draw_horse():
     a = """
-    *******************************************
-    welcome to             O  ,--.
-    Horse Racing Game   _ /|\/  /\|
-                    ,;( )__7,  )
-                    /  //  // '--.
-                    '    \,   ,' '
-    *******************************************
+    *************************************************************************************
+            Welcome to                   O  ,--.
+            Horse Racing Game         _ /|\/  /\|
+                                 ,;( )__7,  )
+                                 /  //  // '--.
+                                 '    \,   ,' '
+       ** Let's see how many rounds your horse will race before it faints.           ** 
+       ** The game will start once you write your horse's name and choose his breed. **
+       ** And your contender will be chosen randomly ...                             **
+       ** Each round you win your points will increase by 10 and your contender      **
+       ** will lose 10 points ...                                                    **
+       ** If the result is tied your points will decrease by 10 and your contender   **
+       ** will get 10 points...                                                      **
+       ** If you fail your points will be zero and your horse will be fainted...     ** 
+       **                                                                            **
+       ** So here we are starting...                                                 **
+    **************************************************************************************
     """
 
     b = """
@@ -36,12 +57,10 @@ def draw_horse():
                          '    \,   ,' '
     ************************************************
     Created By : 
-                  *****************     ************
-                  * Amani_ALZoubi *     * Omar_Ali *  
-                  *****************     ************
-
-    ************************************************
-
+                ************    ********************
+                * Omar_Ali *    * Amani M AL-Zoubi *  
+                ************    ********************
+    *************************************************
     """
     return a,b
        
@@ -75,23 +94,16 @@ if __name__ == "__main__":
                     rr=f"ROUND {HorsesRacing.get_round_numbers()}"
                     sleep(1)  
 
-                        # #################### Create Load Bar #################### #
 
                     print(f"####################################################################### {rr} ###########################################\n")
-                    def Loadbar(iteration, total,prefix='', suffix='', decimals=1, length=100, fill='>'   ):
-                            percent = ('{0:.'+ str(decimals) + 'f}').format(100 * (iteration/float(total)))
-                            filledLenength = int(length * iteration // total)
-                            bar = fill * filledLenength + '_' * (length - filledLenength)
-                            print(f'\r{prefix} | {bar} | {percent}% {suffix}', end='\r')
-                            if iteration == total:
-                                    print()
-
+                    
                     items = list(range(0, 50))
                     l = len(items)  
                     Loadbar(0,l,prefix=rr, suffix='Complete', length=l)
                     for i, item in enumerate(items):
                             sleep(0.04)
                             Loadbar(i + 1, l, prefix=rr, suffix='Complete', length=l)
+
                     print(f"\n {hr}")
                     print(f"\n####################################################################### {rr} ###########################################\n")
                     print(f" {horse} ")

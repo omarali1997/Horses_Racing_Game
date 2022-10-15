@@ -19,6 +19,15 @@ def test_horse_point(horse):
 def test_contender_str(contender):
     assert str(contender) == "king (arabian): 70/100"
 
+def test_point(horse):
+    kind = horse.set_name("Kind")
+    horse_point = horse.set_point(40)
+    assert horse.Point()=="Kind recovered 10 points."
+    horse_point = horse.set_point(100)
+    assert horse.Point()=="Kind is full."
+
+
+
 def test_horse_str_repr():
     kind=HorsesRacing()
     kind.set_name("Kind")

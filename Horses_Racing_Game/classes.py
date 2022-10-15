@@ -1,4 +1,20 @@
 class HorsesRacing:
+    '''
+    A class contains 
+    1. setters to update attributes : 
+        1.1 horse name
+        1.2 horse breed
+        1.3 horse points
+    2. getter to get all pervious attributes.
+    3. static method "win_lose" that takes two arguments : Horse and Contender
+        and determine the winner depending on the breed of each them;depending on Win-lose matrix.
+    4. method to increase the point of horse until it reaches 100 it will be full.
+    5. racing method that takes two arguments horse of user and its contender and call win_lose method 
+        and specify the result if this racing.
+    6. class attribute "round_number" that counts the number of racing by increasing it inside racing method. 
+    7. class method "get_round_numbers" to get the number of rounds.
+    8. also __str__ and __repr__ 
+    '''
 
     def __init__(self):
         self.name = None
@@ -47,9 +63,12 @@ class HorsesRacing:
     def Point(self):
         if self.point < self.high_point:
             self.point += 10
-            print(f"{self.name} recovered 10 points.")
+            # print(f"{self.name} recovered 10 points.")
+            return f"{self.name} recovered 10 points."
         else:
-            print(f"{self.name} is full.")
+            # print(f"{self.name} is full.")
+            return f"{self.name} is full."
+
 
     round_number=0 # Number of rounds
     def racing(self, other):
